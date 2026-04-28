@@ -22,12 +22,12 @@
   background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;
-  transform: scale(1.05);
-  transition: transform 8s ease-out;
+  transform: none;
+  transition: none;
 }
 
 .hero.loaded .hero__bg {
-  transform: scale(1);
+  transform: none;
 }
 
 /* Subtle overlay to deepen contrast slightly */
@@ -71,8 +71,6 @@
   max-width: 285px;
 
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  /* Show the green blossom icon */
 }
 
 .hero__icon img {
@@ -80,8 +78,6 @@
   height: 100%;
   object-fit: contain;
   display: none;
-  filter: brightness(0) invert(1);
-  /* Show the green blossom icon */
 }
 
 .hero__content .btn--primary {
@@ -199,13 +195,13 @@
   }
   .hero__bg {
     position: absolute;
-  inset: 0;
-  background-image: url('../images/blossom-consultancy-desktop-backgound1.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transform: scale(1.05);
-  transition: transform 8s ease-out;
+    inset: 0;
+    background-image: url('../images/blossom-consultancy-desktop-backgound1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: none;
+    transition: none;
   }
 
   .hero__icon {
