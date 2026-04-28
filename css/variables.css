@@ -1,0 +1,58 @@
+/* =============================================
+   BLOSSOM CONSULTANCY — Design Tokens
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Nunito+Sans:wght@300;400;600&display=swap');
+
+:root {
+  /* Brand Colors */
+  --purple:         #5B2D8E;
+  --purple-mid:     #7B3DB5;
+  --purple-light:   #9B5DD5;
+  --green:          #8DC63F;
+  --green-light:    #A8D96A;
+  --green-pale:     #C8E89A;
+
+  /* Neutrals */
+  --white:          #FFFFFF;
+  --off-white:      #F9F7F4;
+  --light-grey:     #F2EEE8;
+  --mid-grey:       #888077;
+  --dark-grey:      #3A3530;
+  --ink:            #1A1612;
+  --transparent:      rgba(0, 0, 0, 0);
+  /* Dirt / Hero */
+  --dirt-text:      #A8D065;   /* greenish text on soil */
+
+  /* Typography */
+  --font-display:   'Nunito', sans-serif;
+  --font-body:      'Nunito Sans', sans-serif;
+
+  /* Spacing Scale */
+  --space-xs:       4px;
+  --space-sm:       8px;
+  --space-md:       16px;
+  --space-lg:       24px;
+  --space-xl:       40px;
+  --space-2xl:      64px;
+  --space-3xl:      96px;
+
+  /* Border Radius */
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      24px;
+  --radius-pill:    999px;
+
+  /* Shadows */
+  --shadow-sm:      0 2px 8px rgba(91, 45, 142, 0.10);
+  --shadow-md:      0 6px 24px rgba(91, 45, 142, 0.15);
+  --shadow-lg:      0 16px 48px rgba(91, 45, 142, 0.20);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* Nav Height */
+  --nav-height:     64px;
+}

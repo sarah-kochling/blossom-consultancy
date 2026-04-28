@@ -1,0 +1,199 @@
+/* =============================================
+   BLOSSOM CONSULTANCY — Navigation
+   ============================================= */
+
+.nav {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  background: var(--tr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  border-bottom: 1px solid rgba(91, 45, 142, 0.08);
+  transition: box-shadow var(--transition-base);
+}
+
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(91, 45, 142, 0.10);
+}
+
+/* Logo */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.nav__logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* Hamburger */
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  z-index: 1001;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.nav__burger:hover {
+  background: var(--light-grey);
+}
+
+.nav__burger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
+}
+
+/* Open State */
+.nav.menu-open .nav__burger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav.menu-open .nav__burger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav.menu-open .nav__burger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay Menu */
+.nav__menu {
+  position: fixed;
+  inset: 0;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-16px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.nav.menu-open .nav__menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.nav__menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.nav__menu-link {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  position: relative;
+  transition: color var(--transition-base);
+}
+
+.nav__menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: var(--radius-pill);
+  transition: width var(--transition-base);
+}
+
+.nav__menu-link:hover {
+  color: var(--purple);
+}
+
+.nav__menu-link:hover::after {
+  width: 100%;
+}
+
+.nav__menu-link.active {
+  color: var(--purple);
+}
+
+.nav__menu-link.active::after {
+  width: 100%;
+}
+
+/* Menu footer tagline */
+.nav__menu-tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+}
+
+/* ─── Tablet & Desktop (≥768px) ─── */
+@media (min-width: 768px) {
+  .nav {
+    padding: 0 var(--space-2xl);
+  }
+
+  .nav__logo img {
+    height: 44px;
+  }
+
+  /* Hide hamburger — links are always visible */
+  .nav__burger {
+    display: none;
+  }
+
+  /* Reset overlay to inline row */
+  .nav__menu {
+    position: static;
+    background: transparent;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xl);
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+    transition: none;
+    z-index: auto;
+  }
+
+  .nav__menu-list {
+    flex-direction: row;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .nav__menu-link {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .nav__menu-tagline {
+    display: none;
+  }
+}

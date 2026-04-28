@@ -1,0 +1,232 @@
+/* =============================================
+   BLOSSOM CONSULTANCY — Home Page
+   ============================================= */
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: var(--nav-height);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/blossom-consultancy-mobile-background.webp');
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
+
+.hero.loaded .hero__bg {
+  transform: scale(1);
+}
+
+/* Subtle overlay to deepen contrast slightly */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 12, 5, 0.08) 0%,
+    rgba(20, 12, 5, 0.15) 60%,
+    rgba(20, 12, 5, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+  max-width: 680px;
+}
+
+.hero__text {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 10vw, 5rem);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--green-light);
+  text-shadow:
+    0 3px 0 rgba(60, 100, 10, 0.55),
+    0 6px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--space-2xl);
+}
+
+/* Logo icon in corner — bottom right */
+.nav__logo img {
+  width: 100%;
+  height: 100%;
+  max-width: 285px;
+
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  /* Show the green blossom icon */
+}
+
+.hero__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  filter: brightness(0) invert(1);
+  /* Show the green blossom icon */
+}
+
+.hero__content .btn--primary {
+  display: inline-block;
+  border-radius: 20px;
+  margin-bottom: 0%;
+
+}
+/* ─── Footer / Contact Preview ─── */
+.home-footer {
+  background: var(--white);
+  padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xl);
+}
+
+.home-footer__logo img {
+  height: 52px;
+  width: auto;
+}
+
+.home-footer__cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 24px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.nav__burger {
+  display: none;
+}
+
+.home-footer__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  font-weight: 700;
+  color: var(--purple);
+  margin-top: calc(-1 * var(--space-md));
+  letter-spacing: -0.01em;
+}
+
+.home-footer__divider {
+  width: 48px;
+  height: 3px;
+  background: var(--green);
+  border-radius: var(--radius-pill);
+  margin: var(--space-xs) 0;
+}
+
+/* Contact Info Block */
+.home-footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-md);
+  align-items: baseline;
+}
+
+.contact-row__label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--mid-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-row__value {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.contact-row__value a {
+  color: var(--purple);
+  transition: color var(--transition-fast);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.contact-row__value a:hover {
+  color: var(--purple-mid);
+  text-decoration-color: var(--purple-light);
+}
+
+/* Copyright */
+.home-footer__copyright {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--mid-grey);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--light-grey);
+  width: 100%;
+}
+
+/* ─── Tablet / Desktop ─── */
+@media (min-width: 768px) {
+  .hero__content {
+    padding: var(--space-2xl) var(--space-2xl) var(--space-3xl);
+  }
+  .hero__bg {
+    position: absolute;
+  inset: 0;
+  background-image: url('../images/blossom-consultancy-desktop-backgound1.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+  }
+
+  .hero__icon {
+    width: 80px;
+    height: 80px;
+    bottom: var(--space-2xl);
+    right: var(--space-2xl);
+  }
+
+  .home-footer {
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-footer {
+    padding: var(--space-3xl) 0;
+    margin: 0 50px 0 70px;
+  }
+
+  .contact-row {
+    grid-template-columns: 100px 1fr;
+  }
+}
