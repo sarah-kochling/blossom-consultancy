@@ -65,6 +65,10 @@
 }
 
 /* Logo icon in corner — bottom right */
+.nav__logo {
+  margin-left: auto;
+}
+
 .nav__logo img {
   width: 100%;
   height: 100%;
